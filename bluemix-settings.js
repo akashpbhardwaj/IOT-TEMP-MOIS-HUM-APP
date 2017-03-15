@@ -22,7 +22,7 @@ var appEnv = cfenv.getAppEnv();
 var app= express();
 var VCAP_APPLICATION = JSON.parse(process.env.VCAP_APPLICATION);
 var VCAP_SERVICES = JSON.parse(process.env.VCAP_SERVICES);
-console.log("Variable"+process.env);
+
 var settings = module.exports = {
     uiPort: process.env.PORT || 1880,
     mqttReconnectTime: 15000,
@@ -92,4 +92,4 @@ if (!couchService) {
 }    
 settings.couchUrl = couchService.credentials.url;
 
-
+console.log("Variable"+process.env);
